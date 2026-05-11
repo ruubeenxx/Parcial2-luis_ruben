@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>ParkSmart</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>ParkSmart</h1>
+
+  <!-- FORMULARIO -->
+  <div class="seccion">
+    <h2>Registrar Vehículo</h2>
+
+    <label>Placa:</label>
+    <input type="text" id="placa" placeholder="Ej: ABC123">
+
+    <label>Propietario:</label>
+    <input type="text" id="propietario" placeholder="Nombre del propietario">
+
+    <label>Horas Estacionado:</label>
+    <input type="number" id="horas" min="1" placeholder="Ej: 3">
+
+    <label>Tipo de Vehículo:</label>
+    <select id="tipo">
+      <option value="M">Moto</option>
+      <option value="C">Carro</option>
+      <option value="K">Camioneta</option>
+      <option value="B">Bus</option>
+    </select>
+
+    <div id="campoCilindraje" style="display:none">
+      <label>Cilindraje (cc):</label>
+      <input type="number" id="cilindraje" placeholder="Ej: 125">
+    </div>
+
+    <div id="campoPuertas" style="display:none">
+      <label>Número de Puertas:</label>
+      <input type="number" id="puertas" placeholder="Ej: 4">
+    </div>
+
+    <p id="mensajeError" class="error"></p>
+
+    <button onclick="Controlador.registrar()">Registrar</button>
+  </div>
+
+  <!-- TABLA -->
+  <div class="seccion">
+    <h2>Vehículos del Día</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Placa</th>
+          <th>Propietario</th>
+          <th>Horas</th>
+          <th>Tipo</th>
+          <th>Tarifa Total</th>
+        </tr>
+      </thead>
+      <tbody id="tablaVehiculos">
+        <!-- Se llena con JS -->
+      </tbody>
+    </table>
+    <p id="totalDia">Total recaudado del día: $0</p>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
