@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>ParkSmart</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
   <h1>ParkSmart</h1>
 
-  <!-- FORMULARIO -->
+  
   <div class="seccion">
     <h2>Registrar Vehículo</h2>
 
@@ -45,7 +45,7 @@
     <button onclick="Controlador.registrar()">Registrar</button>
   </div>
 
-  <!-- TABLA -->
+  
   <div class="seccion">
     <h2>Vehículos del Día</h2>
     <table>
@@ -59,13 +59,17 @@
         </tr>
       </thead>
       <tbody id="tablaVehiculos">
-        <!-- Se llena con JS -->
       </tbody>
     </table>
-    <p id="totalDia">Total recaudado del día: $0</p>
+    <p id="totalDia">Total recaudado del dia: $0</p>
   </div>
 
-  <script src="script.js"></script>
+  <script src="model/vehiculo.js"></script>
+  <script src="model/moto.js"></script>
+  <script src="model/carro.js"></script>
+  <script src="model/modelo.js"></script>
+  <script src="view/vista.js"></script>
+  <script src="controller/controlador.js"></script>
 
 </body>
 </html>
