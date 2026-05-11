@@ -30,7 +30,6 @@ const Controlador = {
       vehiculo = new Vehiculo(placa, propietario, horas, tarifaBase, tipo);
     }
 
-    // Guardar y actualizar la tabla
     let lista = Modelo.cargar();
     lista.push(vehiculo);
     Modelo.guardar(lista);
@@ -39,14 +38,12 @@ const Controlador = {
     Vista.limpiarFormulario();
   },
 
-  // Muestra u oculta campos extra según el tipo seleccionado
   actualizarCampos() {
     let tipo = document.getElementById('tipo').value;
     document.getElementById('campoCilindraje').style.display = (tipo === 'M') ? 'block' : 'none';
     document.getElementById('campoPuertas').style.display    = (tipo === 'C') ? 'block' : 'none';
   },
 
-  // Arranca la app al cargar la página
   iniciar() {
     let lista = Modelo.cargar();
     Vista.renderizarTabla(lista);
@@ -55,10 +52,10 @@ const Controlador = {
 
 };
 
-// Escuchar cambio en el select de tipo
+
 document.getElementById('tipo').addEventListener('change', function () {
   Controlador.actualizarCampos();
 });
 
-// Iniciar la app
+
 Controlador.iniciar();
